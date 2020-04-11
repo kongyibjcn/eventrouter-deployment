@@ -1,0 +1,8 @@
+https://github.com/heptiolabs/eventrouter.git
+
+这个项目被重新改写成为一个deployment的 controller用来将deployment的变化发送到指定的MQ,并且存储deployment变化的改变，当deploymement的改变停止
+也就是revision没有再变化之后，会将记录deployment删除，然后再发送一个部署完成的message到MQ
+
+目前的状态是整体逻辑已经调通，并且可以发送消息到MQ
+
+需要改进的地方是目前是在内存中存储哪些deployment正在变化，这个需要改到外部的中间件中，这样当container重启之后不会重新load.

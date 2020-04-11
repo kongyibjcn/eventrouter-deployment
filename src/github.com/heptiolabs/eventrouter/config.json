@@ -1,0 +1,4 @@
+{
+  "kubeconfig": "/Users/kongyi/.kube/config",
+  "sink": "glog"
+}
